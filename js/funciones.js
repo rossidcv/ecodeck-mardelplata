@@ -89,7 +89,7 @@ $(document).ready(function(){
 sup=`
 <nav class="navbar navbar-default" data-target=".navbar-collapse" data-toggle="collapse">
     <div class="container">
-      <a class="navbar-brand" href="distribuidores.html"><img src="imagenes/logo/ecodeck-logo.png" alt="logo Ecodeck"></a>
+      <a class="navbar-brand" href="index.html"><img src="imagenes/logo/ecodeck-logo.png" alt="logo Ecodeck"></a>
       <button class="hamburger hamburger--emphatic" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">            
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
