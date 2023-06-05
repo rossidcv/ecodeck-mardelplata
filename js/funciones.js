@@ -12,33 +12,6 @@ $(document).ready(function(){
     }); 
   }); 
 });
-// SLIDER HOME
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    center: true,
-    navText: [
-      "<i class='fa fa-angle-left'></i>",
-      "<i class='fa fa-angle-right'></i>"
-  ],
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:3
-        }
-    }
-  });
-});
 
 $(document).ready(function(){
   var flag = false;
@@ -160,10 +133,10 @@ sup=`
             <div class="col-lg-3 col-md-12"> 
                 <h4>PRODUCTOS</h4>
                 <ul>       
-                <li><a class="nav-link" href="#productos"><i class="bi bi-caret-right-fill"></i> Incienso</a></li>
-                <li><a class="nav-link" href="#productos"><i class="bi bi-caret-right-fill"></i> Blanco Smoke</a></li>
-                <li><a class="nav-link" href="#productos"><i class="bi bi-caret-right-fill"></i> Maple</a></li>
-                <li><a class="nav-link" href="#productos"><i class="bi bi-caret-right-fill"></i>Gris Mirage</a></li>
+                <li><a class="nav-link" href="#incienso"><i class="bi bi-caret-right-fill"></i> Incienso</a></li>
+                <li><a class="nav-link" href="#blanco-smoke"><i class="bi bi-caret-right-fill"></i> Blanco Smoke</a></li>
+                <li><a class="nav-link" href="#maple"><i class="bi bi-caret-right-fill"></i> Maple</a></li>
+                <li><a class="nav-link" href="#gris-mirage"><i class="bi bi-caret-right-fill"></i>Gris Mirage</a></li>
               </ul>
             </div><!-- cierra col-->
             <div class="col-lg-4 col-md-12">  
