@@ -84,9 +84,9 @@ $(document).ready(function(){
 });
 
 
-
 //MENÚ
 sup=`
+<header id="linkHome">
 <nav class="navbar navbar-default" data-target=".navbar-collapse" data-toggle="collapse">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="imagenes/logo/ecodeck-logo.png" alt="logo Ecodeck"></a>
@@ -99,7 +99,7 @@ sup=`
         <div id="menu">
         <ul class="nav navbar-nav">
           <li data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-            <a class="nav-link" href="#inicio"><i class="bi bi-house-door-fill icono-home"></i></a>
+            <a class="nav-link active" href="#inicio"><i class="bi bi-house-door-fill icono-home"></i></a>
           </li>
           <li data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
             <a class="nav-link" href="#productos">Productos</a>
@@ -112,6 +112,7 @@ sup=`
       </div>
     </div>
   </nav>
+  </header>
 `;
 document.write(sup);
 
@@ -132,11 +133,14 @@ sup=`
             </div><!-- cierra col-->
             <div class="col-lg-3 col-md-12"> 
                 <h4>PRODUCTOS</h4>
-                <ul>       
-                <li><a class="nav-link" href="#incienso"><i class="bi bi-caret-right-fill"></i> Incienso</a></li>
-                <li><a class="nav-link" href="#blanco-smoke"><i class="bi bi-caret-right-fill"></i> Blanco Smoke</a></li>
-                <li><a class="nav-link" href="#maple"><i class="bi bi-caret-right-fill"></i> Maple</a></li>
-                <li><a class="nav-link" href="#gris-mirage"><i class="bi bi-caret-right-fill"></i>Gris Mirage</a></li>
+               <ul>       
+                <li><a class="nav-link" href="#deck-ecologico"><i class="bi bi-caret-right-fill"></i> Deck Ecologico WPC</a></li>
+                <li><a class="nav-link" href="#deck-madera"><i class="bi bi-caret-right-fill"></i> Deck de madera</a></li>
+                <li><a class="nav-link" href="#wall-panel"><i class="bi bi-caret-right-fill"></i> Wall Panel</a></li>
+                <li><a class="nav-link" href="#pergolas"><i class="bi bi-caret-right-fill"></i> Pérgolas</a></li>
+                <li><a class="nav-link" href="#pisos"><i class="bi bi-caret-right-fill"></i> Pisos SPC</a></li>
+                <li><a class="nav-link" href="#perfiles"><i class="bi bi-caret-right-fill"></i> Perfiles WPC</a></li>
+                <li><a class="nav-link" href="#cielorrasopvc"><i class="bi bi-caret-right-fill"></i> Revestimientos / Cielorraso PVC</a></li>                              
               </ul>
             </div><!-- cierra col-->
             <div class="col-lg-4 col-md-12">  
@@ -199,9 +203,23 @@ sup=`
 `;
 document.write(sup);
 
-document.querySelectorAll(".nav-link").forEach((link) => {
-  if (link.href === window.location.href) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-  }  
-});
+
+/* Botón Activo del Menú*/
+  let navmenulinks = document.querySelectorAll('.navbar a');
+
+  function navmenuActive() {
+    navmenulinks.forEach(navmenulink => {
+      if (!navmenulink.hash) return;
+      let section = document.querySelector(navmenulink.hash);
+      if (!section) return;
+      let position = window.scrollY + 200;
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        document.querySelectorAll('.navbar a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      } else {
+        navmenulink.classList.remove('active');
+      }
+    })
+  }
+  window.addEventListener('load', navmenuActive);
+  document.addEventListener('scroll', navmenuActive);
